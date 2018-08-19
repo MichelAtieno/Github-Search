@@ -1,8 +1,6 @@
 <div class="container-fluid">
-    <div class="form-group">
-       <label for="">Github Username</label> 
-       <input type='text' class='form-control' ngModel='username'>
-    </div>
+
+    <app-search (searchName)='searchUser($event)'></app-search>
 
 
     <img src="{{user.avatar_url}}" alt"Profile-Picture of Git-User">

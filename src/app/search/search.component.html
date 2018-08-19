@@ -1,3 +1,6 @@
-<p>
-  search works!
-</p>
+<form (ngSubmit)="lookFor(searchForm)" #searchForm="ngForm">
+  <div class="form-group">
+    <input type="text" class="form-control" name="search" placeholder="Search" [(ngModel)]="getSearch.Search" #find='ngModel' required>
+    <button type="submit" class="btn btn-outline-warning"> Search</button>
+  </div>
+</form>

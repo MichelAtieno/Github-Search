@@ -21,7 +21,7 @@ export class ProfileService {
       avatar_url: string;
     }
 
-    let promise = new Promise((resolve, reject) => {
+    const promise = new Promise((resolve, reject) => {
       // tslint:disable-next-line:max-line-length
       this.http.get<ApiResponse>('https://api.github.com/users/MichelAtieno?access_token=58b6bc80382e7bff719ab38e773fbddca03899b0').toPromise().then(getUserInfo => {
         this.user.name = getUserInfo.name;
