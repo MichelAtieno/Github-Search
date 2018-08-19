@@ -10,10 +10,26 @@ import { User } from '../user';
 })
 export class ProfileComponent implements OnInit {
   user: User;
+  public profileSearch = 'MichelAtieno';
+  public newUserName;
 
-  constructor( public getProfile: ProfileService) {
+  getUserProfile(name) {
+    this.newUserName = '';
+    for (let i = 0; i < name.length; i++) {
+      if (name.charAt(i) === ' ' || name.charAt(i) === '?' || name.charAt(i) === '/') {
+      alert(`Not valid Username` );
+      this.newUserName = 'MichelAtieno';
+      } else if (name.charAt(i) !== '' || name.charAt(i) !== '?' || name.charAt(i) !== '/' ) {
+      this.newUserName = this.newUserName.concat(name.charAt(i));
+      }
+    }
+    this.profileSearch = this.newUserName;
+  }
+
+  constructor( public getProfileRequest: ProfileService) {
    }
 
   ngOnInit() {
-   this.user = this.getProfile.user;
+   this.getProfileRequest.getProfile(this.profileSearch);
+   this.user = this.getProfileRequest.user;
 } }

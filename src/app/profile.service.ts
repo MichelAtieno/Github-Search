@@ -15,7 +15,7 @@ export class ProfileService {
     this.user = new User ('', '', '', '', 0 , false, new Date(), 0, 0);
    }
 
-   getProfile() {
+   getProfile(searchProfile) {
     interface ApiResponse {
       name: string;
       avatar_url: string;
