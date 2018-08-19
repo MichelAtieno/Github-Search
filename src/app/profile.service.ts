@@ -18,7 +18,14 @@ export class ProfileService {
    getProfile(searchProfile) {
     interface ApiResponse {
       name: string;
+      login: string;
       avatar_url: string;
+      html_url: string;
+      public_repos: number;
+      hireable: boolean;
+      created_at: Date;
+      followers: number;
+      following: number;
     }
 
     const promise = new Promise((resolve, reject) => {
