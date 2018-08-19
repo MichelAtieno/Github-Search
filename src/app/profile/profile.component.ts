@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ProfileService } from '../profile.service';
 import { User } from '../user';
+import { Repository } from '../repository';
+import { ProfileService } from '../profile.service';
 
 @Component({
   selector: 'app-profile',
@@ -12,7 +13,7 @@ export class ProfileComponent implements OnInit {
   user: User;
   public profileSearch = 'MichelAtieno';
   public newUserName;
-  repo = [];
+  repository = [];
 
   getUserProfile(name) {
     this.newUserName = '';
@@ -28,10 +29,11 @@ export class ProfileComponent implements OnInit {
     this.ngOnInit();
   }
 
-  constructor( public getProfileRequest: ProfileService) {
+  constructor( public getProfileRequest: ProfileService, public getRepositoryRequest: ProfileService) {
    }
 
   ngOnInit() {
    this.getProfileRequest.getProfile(this.profileSearch);
    this.user = this.getProfileRequest.user;
+   this.getRepositoryRequest.getProfileRepo(this.profileSearch);
 } }

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient } from '@angular/common/http';
 import { User } from './user';
 import { Repository } from './repository';
-import { reject } from 'q';
+import { reject, resolve } from 'q';
 
 
 @Injectable({
@@ -13,10 +13,11 @@ export class ProfileService {
   repository: Repository;
   otherRepo: any;
   searchRepository: any;
+  getUserRepo: any;
 
   constructor( private http: HttpClient) {
     this.user = new User ('', '', '', '', 0 , false, new Date(), 0, 0);
-    this.repository = new Repository ( );
+    this.repository = new Repository ('', '', new Date(), '' );
    }
 
    getProfile(searchProfile) {
@@ -62,7 +63,7 @@ export class ProfileService {
     return promise;
   }
 
-   getProfileRepo(searchName) {
+   getProfileRepo(searchProfile) {
      interface ApiResponse {
        name: string;
        html_url: string;
@@ -70,12 +71,14 @@ export class ProfileService {
        description: string;
      }
      // tslint:disable-next-line:max-line-length
-     const myPromise = new Promise ((resolve, reject) => { this.http.get<ApiResponse>('https://api.github.com/users/MichelAtieno?access_token=58b6bc80382e7bff719ab38e773fbddca03899b0').toPromise().then(getUserInfo => {
-      this.otherRepo = getUserInfo;
-      resolve();
-     }, error => {
+     const myPromise = new Promise((resolve, reject) => {
+      // tslint:disable-next-line:max-line-length
+      this.http.get<ApiResponse>('https://api.github.com/users/MichelAtieno?access_token=58b6bc80382e7bff719ab38e773fbddca03899b0').toPromise().then(getUserRepo => {
+        this.otherRepo = this.getUserRepo;
+        resolve();
+      }, error => {
        console.log('Failed');
-       this.otherRepo.name = '';
+       this.otherRepo.name = 'Error';
        this.otherRepo.html_url = 'https://github.com/';
        this.otherRepo.created_at = new Date(Date.now());
        this.otherRepo.description = '';
@@ -84,4 +87,22 @@ export class ProfileService {
    });
    reject(Error);
 }
- }
+ getRepository(searchProfile, toShow) {
+  interface ApiResponse {
+    items: any;
+}
+const promise = new Promise((resolve, reject) => {
+  // tslint:disable-next-line:max-line-length
+  this.http.get<ApiResponse>('https://api.github.com/users/MichelAtieno?access_token=58b6bc80382e7bff719ab38e773fbddca03899b0').toPromise().then(getUserRepo => {
+    this.searchRepository = getUserRepo.items;
+    // console.log(getRepoResponse.items)
+    resolve();
+  }, error => {
+    this.searchRepository = 'Type to make a search request';
+    console.log('Loading Failed');
+    reject(error);
+  });
+});
+return promise;
+
+ } }

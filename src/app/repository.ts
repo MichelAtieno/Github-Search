@@ -1,13 +1,12 @@
 export class Repository {
-    constructor(
-        public name: string,
-        public html_url: string,
-        public created_at: Date,
-        public description: string
-         ) {
-             this.name = name;
-             this.html_url = html_url;
-             this.created_at = created_at;
-             this.description = description;
-         }
+    constructor(public name,
+                public html_url,
+                public created_at,
+                public description
+                ) {
+        this.name = name;
+        this.html_url = html_url;
+        this.created_at = created_at;
+        this.description = description;
+    }
 }
