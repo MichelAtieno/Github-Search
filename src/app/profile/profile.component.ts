@@ -12,6 +12,7 @@ export class ProfileComponent implements OnInit {
   user: User;
   public profileSearch = 'MichelAtieno';
   public newUserName;
+  repo = [];
 
   getUserProfile(name) {
     this.newUserName = '';
@@ -24,6 +25,7 @@ export class ProfileComponent implements OnInit {
       }
     }
     this.profileSearch = this.newUserName;
+    this.ngOnInit();
   }
 
   constructor( public getProfileRequest: ProfileService) {
