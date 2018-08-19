@@ -31,10 +31,10 @@
         
     </div>
         
-     <div *ngFor='let repository of getProfileRepo.otherRepo'>
+     <div *ngFor='let repository of getRepositoryRequest.otherRepo'>
         <ul>
             <li>{{repository.name}}</li>
-            <li> <a href = '{{repository.html_url}}' target='blank'>{{repository.name}}</a></li>
+            <li> <a href='{{repository.html_url}}' target='blank'>{{repository.name}}</a></li>
             <li>Created on: {{repository.created_at}}</li>
             <li>Description: {{repository.description}}</li>
         </ul>
