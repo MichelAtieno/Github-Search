@@ -6,39 +6,31 @@
       </div>
     </div>
 
-    <div class="row">
+    <div class="row" id="Properties" ng-style="myStyle">
         <div class="col-md-3">
          <img src='{{user.avatar_url}}' alt='Profile-Picture of Git-User'>
         </div>
 
-        <div class="col-md-1">
-         <p> {{user.name}} </p>
+        <div class="col-md-9">
+         <ul>
+             <li>{{user.name}}</li>
+             <br>
+             <li><a href='{{user.html_url}}' target='_blank'>{{users.login}}</a> </li>
+             <br>
+             <li>Repositories:{{user.public_repos}}</li>
+             <br>
+             <li>Hireable: {{user.hireable}}</li>
+             <br>
+             <li>Created At:  {{user.created_at}}</li>
+             <br>
+             <li>Followers: {{user.followers}}</li>
+             <br>
+             <li>Following: {{user.following}} </li>
+          </ul>
         </div>
-
-        <div class="col-md-1">
-         <p> {{user.html_url}} </p>
-        </div>
-
-        <div class="col-md-1">
-         <p> {{user.public_repos}} </p>
-        </div>
-
-        <div class="col-md-1">
-          <p> {{user.hireable}} </p>
-        </div>
-
-        <div class="col-md-1">
-          <p> {{user.created_at}} </p>
-        </div>
-
-        <div class="col-md-1">
-           <p> {{user.followers}} </p>
-        </div>
-
-         <div class="col-md-1">
-            <p> {{user.following}} </p>
-         </div>
+        
     </div>
+        
    
 
 
