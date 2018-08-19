@@ -5,12 +5,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { ProfileComponent } from './profile/profile.component';
 import { SearchComponent } from './search/search.component';
+import { RepositoryComponent } from './repository/repository.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProfileComponent,
-    SearchComponent
+    SearchComponent,
+    RepositoryComponent
   ],
   imports: [
     BrowserModule,
