@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient } from '@angular/common/http';
 import { User } from './user';
-import { resolve } from 'url';
+import { Repository } from './repository';
 import { reject } from 'q';
 
 
@@ -10,9 +10,13 @@ import { reject } from 'q';
 })
 export class ProfileService {
   user: User;
+  repository: Repository;
+  otherRepo: any;
+  searchRepository: any;
 
   constructor( private http: HttpClient) {
     this.user = new User ('', '', '', '', 0 , false, new Date(), 0, 0);
+    this.repository = new Repository ( );
    }
 
    getProfile(searchProfile) {
@@ -57,4 +61,27 @@ export class ProfileService {
     });
     return promise;
   }
+
+   getProfileRepo(searchName) {
+     interface ApiResponse {
+       name: string;
+       html_url: string;
+       created_at: Date;
+       description: string;
+     }
+     // tslint:disable-next-line:max-line-length
+     const myPromise = new Promise ((resolve, reject) => { this.http.get<ApiResponse>('https://api.github.com/users/MichelAtieno?access_token=58b6bc80382e7bff719ab38e773fbddca03899b0').toPromise().then(getUserInfo => {
+      this.otherRepo = getUserInfo;
+      resolve();
+     }, error => {
+       console.log('Failed');
+       this.otherRepo.name = '';
+       this.otherRepo.html_url = 'https://github.com/';
+       this.otherRepo.created_at = new Date(Date.now());
+       this.otherRepo.description = '';
+       reject(error);
+     });
+   });
+   reject(Error);
 }
+ }
