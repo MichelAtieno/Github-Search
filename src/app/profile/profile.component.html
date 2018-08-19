@@ -31,7 +31,15 @@
         
     </div>
         
-   
+     <div *ngFor='let repository of getProfileRepo.otherRepo'>
+        <ul>
+            <li> <a href = '{{repository.html_url}}' target='blank'>{{repository.name}}</a></li>
+            <li>Created on: {{repository.created_at}}</li>
+            <li>Description: {{repository.description}}</li>
+        </ul>
+    
 
+    </div> 
 
+ 
 </div>
