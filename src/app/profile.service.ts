@@ -7,10 +7,10 @@ import { User } from './user';
   providedIn: 'root'
 })
 export class ProfileService {
-  // user: User;
+  user: User;
 
   constructor( private http: HttpClient) {
-   // this.user = new User('');
+    this.user = new User ('', '', '', '', 0 , false, new Date(), 0, 0);
    }
 
 }

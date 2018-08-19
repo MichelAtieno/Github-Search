@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 // import { ProfileService } from '../profile.service';
 import { Http } from '@angular/http';
+import { User } from '../user';
 
 @Component({
   selector: 'app-profile',
@@ -8,7 +9,7 @@ import { Http } from '@angular/http';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-  profiles: any[];
+  user: User;
 
   constructor( private http: Http) {
     http.get('https://api.github.com/users/MichelAtieno?access_token=58b6bc80382e7bff719ab38e773fbddca03899b0').subscribe(response => {
