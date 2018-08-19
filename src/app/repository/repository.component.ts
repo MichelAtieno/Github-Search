@@ -16,7 +16,7 @@ export class RepositoryComponent implements OnInit {
 
   searchRepository(name) {
     this.newUserName = '';
-    for(var i = 0; i < name.length; i++) {
+    for ( let i = 0; i < name.length; i++) {
       if (name.charAt(i) === '') {
         this.newUserName = this.newUserName.concat('+');
       } else if (name.charAt(i) !== '') {

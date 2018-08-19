@@ -1,3 +1,13 @@
-<p>
-  repository works!
-</p>
+<div class="container-fluid">
+    <app-search (searchName)='getUserProfile($event)'></app-search>
+    <h3>Search Repository</h3>
+    <p>{{ resultCount }}</p>
+
+    <div *ngFor= 'let repository of getRepositoryRequest.searchRepository'>
+      <p><a href='{{ repository.html_url}}'>{{ repository.name}}</a></p>
+      <p>Created on: {{repository.created_at}}</p>
+      <p>Description: {{repository.description}}</p>
+    </div>
+    
+</div>
+
