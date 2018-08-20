@@ -73,7 +73,7 @@ export class ProfileService {
      // tslint:disable-next-line:max-line-length
      const myPromise = new Promise((resolve, reject) => {
       // tslint:disable-next-line:max-line-length
-      this.http.get<ApiResponse>('https://api.github.com/users/MichelAtieno?access_token=58b6bc80382e7bff719ab38e773fbddca03899b0').toPromise().then(getUserRepo => {
+      this.http.get<ApiResponse>('https://api.github.com/users/"+searchProfile+"/repository?order=created&sort=asc?access_token=58b6bc80382e7bff719ab38e773fbddca03899b0').toPromise().then(getUserRepo => {
         this.otherRepo = this.getUserRepo;
         resolve();
       }, error => {
@@ -88,12 +88,12 @@ export class ProfileService {
    reject(Error);
 }
  getRepository(searchProfile, toShow) {
-  interface ApiResponse {
+  interface ApiResponse {         // https://api.github.com/users/MichelAtieno?access_token=58b6bc80382e7bff719ab38e773fbddca03899b0
     items: any;
 }
 const promise = new Promise((resolve, reject) => {
   // tslint:disable-next-line:max-line-length
-  this.http.get<ApiResponse>('https://api.github.com/users/MichelAtieno?access_token=58b6bc80382e7bff719ab38e773fbddca03899b0').toPromise().then(getUserRepo => {
+  this.http.get<ApiResponse>('https://api.github.com/search/repositories?q="+searchProfile+"&per_page="+toShow+"&sort=forks&order=asc?access_token=58b6bc80382e7bff719ab38e773fbddca03899b0').toPromise().then(getUserRepo => {
     this.searchRepository = getUserRepo.items;
     // console.log(getRepoResponse.items)
     resolve();
