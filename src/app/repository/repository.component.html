@@ -1,6 +1,5 @@
 <div class="container-fluid">
-    <app-search (searchName)='searchRepository($event)'></app-search>
-    <h3>Search Repository</h3>
+    <!--<app-search (searchName)='searchRepository($event)'></app-search> -->
     <p>{{ resultCount }}</p>
 
     <div *ngFor= 'let repository of getRepositoryRequest.searchRepository'>
@@ -8,6 +7,8 @@
       <p>Created on: {{repository.created_at}}</p>
       <p>Description: {{repository.description}}</p>
     </div>
+
+    <button class="btn btn-outline-warning" (click)="Reload()">Reload</button>
     
 </div>
 

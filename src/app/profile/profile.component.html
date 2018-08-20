@@ -1,8 +1,7 @@
 <div class="container-fluid">
     <div class="row">
       <div class="col-md-12">
-        <app-search (searchName)='getUserProfile($event)'></app-search>
-        <p>Search Username</p>
+        <app-search (searchName)="getUserProfile($event)"></app-search>
       </div>
     </div>
 
@@ -31,17 +30,7 @@
         
     </div>
         
-     <div *ngFor='let repository of getRepositoryRequest.otherRepo'>
-         <h4>Repositories by {{user.name}}</h4>
-        <ul>
-            <li>{{repository.name}}</li>
-            <li> <a href='{{repository.html_url}}' target='blank'>{{repository.name}}</a></li>
-            <li>Created on: {{repository.created_at}}</li>
-            <li>Description: {{repository.description}}</li>
-        </ul>
-    
-
-    </div> 
+    <app-repository></app-repository>
 
  
 </div>
