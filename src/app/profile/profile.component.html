@@ -32,6 +32,7 @@
     </div>
         
      <div *ngFor='let repository of getRepositoryRequest.otherRepo'>
+         <h4>Repositories by {{user.name}}</h4>
         <ul>
             <li>{{repository.name}}</li>
             <li> <a href='{{repository.html_url}}' target='blank'>{{repository.name}}</a></li>

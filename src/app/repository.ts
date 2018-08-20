@@ -1,8 +1,12 @@
 export class Repository {
-    constructor(public name,
-                public html_url,
-                public created_at,
-                public description
+    public name: string;
+    public html_url: string;
+    public created_at: Date;
+    public description: string;
+    constructor(name,
+                html_url,
+                created_at,
+                description
                 ) {
         this.name = name;
         this.html_url = html_url;
