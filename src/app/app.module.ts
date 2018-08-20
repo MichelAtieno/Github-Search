@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { ProfileComponent } from './profile/profile.component';
 import { SearchComponent } from './search/search.component';
 import { RepositoryComponent } from './repository/repository.component';
+import { FormsModule } from '@angular/forms'
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { RepositoryComponent } from './repository/repository.component';
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
