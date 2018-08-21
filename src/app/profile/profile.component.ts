@@ -36,8 +36,8 @@ export class ProfileComponent implements OnInit {
    }
    findProfile() {
      this.profileService.updateProfile(this.userName);
-     // this.profileService.getProfile();
-     // this.user = this.profileService.user;
+     this.profileService.getProfile();
+     this.user = this.profileService.user;
      this.profileService.getProfileRepo(this.userName);
      this.reporesults = this.profileService.otherRepo;
    }

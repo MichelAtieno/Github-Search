@@ -38,7 +38,7 @@ export class ProfileService {
 
     const promise = new Promise((resolve, reject) => {
       // tslint:disable-next-line:max-line-length
-      this.http.get<ApiResponse>('https://api.github.com/users/MichelAtieno?access_token=' + environment.accesstoken ).toPromise().then(getUserInfo => {
+      this.http.get<ApiResponse>('https://api.github.com/users/' + this.userName + '?access_token=' + environment.accesstoken ).toPromise().then(getUserInfo => {
         this.user.name = getUserInfo.name;
         this.user.login = getUserInfo.login;
         this.user.avatar_url  = getUserInfo.avatar_url;
@@ -65,7 +65,7 @@ export class ProfileService {
      // tslint:disable-next-line:max-line-length
      const myPromise = new Promise((resolve, reject) => {
       // tslint:disable-next-line:max-line-length
-      this.http.get<ApiResponse>('https://api.github.com/users/MichelAtieno/repos?access_token=' + environment.accesstoken ).toPromise().then(getUserRepo => {
+      this.http.get<ApiResponse>('https://api.github.com/users/' + this.userName + '/repos?access_token=' + environment.accesstoken ).toPromise().then(getUserRepo => {
         this.otherRepo = getUserRepo;
         console.log(this.otherRepo);
         resolve();
