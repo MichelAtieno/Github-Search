@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { User } from '../user';
 import { Repository } from '../repository';
 import { ProfileService } from '../profile.service';
-import {getResponseURL} from '@angular/http/src/http_utils';
 
 @Component({
   selector: 'app-profile',
@@ -13,7 +12,7 @@ import {getResponseURL} from '@angular/http/src/http_utils';
 export class ProfileComponent implements OnInit {
   user: User;
    public profileSearch = 'MichelAtieno';
-   public newUserName: string;
+   // public newUserName: string;
    repository: Repository;
    reporesults: any;
    userName: string;
@@ -30,7 +29,7 @@ export class ProfileComponent implements OnInit {
     }
     this.profileSearch = this.newUserName;
     this.ngOnInit();
-  }*/
+  }*/ // This code also works but findProfile() is better
 
   constructor( public profileService: ProfileService ) {
    }

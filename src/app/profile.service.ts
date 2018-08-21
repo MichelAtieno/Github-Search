@@ -67,7 +67,7 @@ export class ProfileService {
       // tslint:disable-next-line:max-line-length
       this.http.get<ApiResponse>('https://api.github.com/users/' + this.userName + '/repos?access_token=' + environment.accesstoken ).toPromise().then(getUserRepo => {
         this.otherRepo = getUserRepo;
-        console.log(this.otherRepo);
+        // console.log(this.otherRepo);
         resolve();
       }, error => {
        console.log('Failed');
