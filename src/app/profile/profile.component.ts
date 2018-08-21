@@ -11,9 +11,9 @@ import { ProfileService } from '../profile.service';
 })
 export class ProfileComponent implements OnInit {
   user: User;
-  public profileSearch = 'MichelAtieno';
-  public newUserName;
-  repository = [];
+   public profileSearch = 'MichelAtieno';
+   public newUserName;
+   // repo = [];
 
   getUserProfile(name) {
     this.newUserName = '';
@@ -35,5 +35,5 @@ export class ProfileComponent implements OnInit {
   ngOnInit() {
    this.getProfileRequest.getProfile(this.profileSearch);
    this.user = this.getProfileRequest.user;
-   this.getRepositoryRequest.getProfileRepo(this.profileSearch);
+   // this.getRepositoryRequest.getProfileRepo(this.profileSearch);
 } }

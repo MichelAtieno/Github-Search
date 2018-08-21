@@ -1,8 +1,9 @@
 <div class="container-fluid">
-    <!--<app-search (searchName)='searchRepository($event)'></app-search> -->
+    <!--<app-search (searchName)='searchRepository($event)'></app-search> 
+    *ngFor= 'let repository of getRepositoryRequest.searchRepository'-->
     <p>{{ resultCount }}</p>
 
-    <div *ngFor= 'let repository of getRepositoryRequest.searchRepository'>
+    <div >
       <p><a href='{{ repository.html_url}}'>{{ repository.name}}</a></p>
       <p>Created on: {{repository.created_at}}</p>
       <p>Description: {{repository.description}}</p>

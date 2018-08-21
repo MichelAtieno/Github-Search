@@ -6,14 +6,16 @@ import { AppComponent } from './app.component';
 import { ProfileComponent } from './profile/profile.component';
 import { SearchComponent } from './search/search.component';
 import { RepositoryComponent } from './repository/repository.component';
-import { FormsModule } from '@angular/forms'
+import { FormsModule } from '@angular/forms';
+import { LastNamePipe } from './last-name.pipe'
 
 @NgModule({
   declarations: [
     AppComponent,
     ProfileComponent,
     SearchComponent,
-    RepositoryComponent
+    RepositoryComponent,
+    LastNamePipe
   ],
   imports: [
     BrowserModule,

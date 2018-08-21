@@ -13,11 +13,9 @@
         <div class="col-md-7" id="Properties1" ng-style="myStyle">
           <h3 ng-style= "myStyle">Github Profile Details</h3>
          <ul>
-             <li> Name:<a href='{{user.html_url}}' target='_blank'>{{user.login}}</a> </li>
+             <li> Name:<a href='{{user.html_url}}' target='_blank'>{{user.login | lastName}}</a> </li>
              <br>
              <li>Repositories:{{user.public_repos}}</li>
-             <br>
-             <li>Hireable: {{user.hireable}}</li>
              <br>
              <li>Created On: {{user.created_at}}</li>
              <br>
