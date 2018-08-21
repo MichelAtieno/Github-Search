@@ -35,16 +35,16 @@
         
     <!-- <app-repository></app-repository>
     ngFor let repository of getRepositoryRequest.repository -->
-
+  <div class="row" id="RepoSection" ng-style="myStyle">
     <div *ngIf="profileService">  
-      <h3 ng-style="myStyle" id="repo">Repositories</h3>
+      <h3 ng-style="myStyle" id="repo">Repositories By User</h3>
       <div *ngFor='let repository of profileService.otherRepo'>
       <ul>
-        <li><a href= '{{repository_html_url}}' target:_blank></a>{{repository.name}}</li>
-        <li>Description :{{repository.description}}</li>
+        <li><a href= '{{repository.html_url}}' target:_blank></a>{{repository.name}} <br> Description :{{repository.description}}</li>
       </ul>
     </div>
     </div>
+  </div>
 
  
 </div>
