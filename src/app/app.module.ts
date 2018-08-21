@@ -7,7 +7,8 @@ import { ProfileComponent } from './profile/profile.component';
 import { SearchComponent } from './search/search.component';
 import { RepositoryComponent } from './repository/repository.component';
 import { FormsModule } from '@angular/forms';
-import { LastNamePipe } from './last-name.pipe'
+import { LastNamePipe } from './last-name.pipe';
+import { DirectDirective } from './direct.directive'
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { LastNamePipe } from './last-name.pipe'
     ProfileComponent,
     SearchComponent,
     RepositoryComponent,
-    LastNamePipe
+    LastNamePipe,
+    DirectDirective
   ],
   imports: [
     BrowserModule,

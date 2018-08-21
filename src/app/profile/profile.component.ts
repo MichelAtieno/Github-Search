@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { User } from '../user';
 import { Repository } from '../repository';
 import { ProfileService } from '../profile.service';
+import {getResponseURL} from '@angular/http/src/http_utils';
 
 @Component({
   selector: 'app-profile',
@@ -12,10 +13,12 @@ import { ProfileService } from '../profile.service';
 export class ProfileComponent implements OnInit {
   user: User;
    public profileSearch = 'MichelAtieno';
-   public newUserName;
-   // repo = [];
+   public newUserName: string;
+   repository: Repository;
+   reporesults: any;
+   userName: string;
 
-  getUserProfile(name) {
+ /* getUserProfile(name) {
     this.newUserName = '';
     for (let i = 0; i < name.length; i++) {
       if (name.charAt(i) === ' ' || name.charAt(i) === '?' || name.charAt(i) === '/') {
@@ -27,13 +30,24 @@ export class ProfileComponent implements OnInit {
     }
     this.profileSearch = this.newUserName;
     this.ngOnInit();
-  }
+  }*/
 
-  constructor( public getProfileRequest: ProfileService, public getRepositoryRequest: ProfileService) {
+  constructor( public profileService: ProfileService ) {
+   }
+   findProfile() {
+     this.profileService.updateProfile(this.userName);
+     // this.profileService.getProfile();
+     // this.user = this.profileService.user;
+     this.profileService.getProfileRepo(this.userName);
+     this.reporesults = this.profileService.otherRepo;
    }
 
+
   ngOnInit() {
-   this.getProfileRequest.getProfile(this.profileSearch);
-   this.user = this.getProfileRequest.user;
+   this.profileService.getProfile();
+   this.user = this.profileService.user;
+   this.profileService.getProfileRepo(this.userName);
+   this.repository = this.profileService.repository;
+   console.log(this.profileService.repository.name);
    // this.getRepositoryRequest.getProfileRepo(this.profileSearch);
 } }

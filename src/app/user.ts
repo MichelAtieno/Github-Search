@@ -8,14 +8,5 @@ export class User {
                  public created_at: Date,
                  public followers: number,
                  public following: number
-                ) {
-                    this.name = name;
-                    this.login = login;
-                    this.avatar_url = avatar_url;
-                    this.html_url = html_url;
-                    this.public_repos = public_repos;
-                    this.created_at = created_at;
-                    this.followers = followers;
-                    this.following = following;
-                }
+                ) {}
 }

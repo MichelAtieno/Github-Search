@@ -8,14 +8,14 @@ import { Search } from '../search';
 })
 export class SearchComponent implements OnInit {
 
-  getSearch = new Search('');
+  /*getSearch = new Search('');
 
   @Output() searchName = new EventEmitter<Search>();
 
   searchFor(data) {
      this.searchName.emit(data.value.search);
      data.reset();
-  }
+  } */
   constructor() { }
 
   ngOnInit() {

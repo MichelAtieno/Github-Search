@@ -1,19 +1,25 @@
 <div class="container-fluid">
     <div class="row">
-      <div class="col-md-12">
-        <app-search (searchName)="getUserProfile($event)"></app-search>
+      <div class="col-md-5">
+          <form (keyup)="findProfile()" #searchForm="ngForm">
+              <div class="form-group">
+                <input type="text" class="form-control" name="newUserName" placeholder="Search" [(ngModel)]="newUserName" required>
+                <!--<button type="submit" class="btn btn-primary"> Search User</button>-->
+              </div>
+            </form>
+       
       </div>
     </div>
 
     <div class="row" id="Properties" ng-style="myStyle">
-        <div class="col-md-5" id="Gitphoto">
+        <div class="col-md-5" id="Gitphoto" *ngIf="user">
          <img src='{{user.avatar_url}}' alt='Profile-Picture of Git-User'>
         </div>
 
         <div class="col-md-7" id="Properties1" ng-style="myStyle">
           <h3 ng-style= "myStyle">Github Profile Details</h3>
          <ul>
-             <li> Name:<a href='{{user.html_url}}' target='_blank'>{{user.login | lastName}}</a> </li>
+             <li appAppDirective> Name:<a href='{{user.html_url}}' target='_blank'>{{user.login | lastName}}</a> </li>
              <br>
              <li>Repositories:{{user.public_repos}}</li>
              <br>
@@ -30,13 +36,14 @@
     <!-- <app-repository></app-repository>
     ngFor let repository of getRepositoryRequest.repository -->
 
-    <div> 
+    <div *ngIf="profileService">  
       <h3 ng-style="myStyle" id="repo">Repositories</h3>
+      <div *ngFor='let repository of profileService.otherRepo'>
       <ul>
         <li><a href= '{{repository_html_url}}' target:_blank></a>{{repository.name}}</li>
-        <li> Created on :{{repository.created_at}} </li>
         <li>Description :{{repository.description}}</li>
       </ul>
+    </div>
     </div>
 
  

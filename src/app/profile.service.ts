@@ -15,7 +15,7 @@ export class ProfileService {
   repository: Repository;
   otherRepo: any;
   // searchRepository: any;
-  getUserRepo: any;
+  // getUserRepo: any;
   private userName: string;
 
   constructor( private http: HttpClient) {
@@ -24,7 +24,7 @@ export class ProfileService {
     this.userName = 'MichelAtieno';
    }
 
-   getProfile(searchProfile) {
+   getProfile() {
     interface ApiResponse {
       name: string;
       login: string;
@@ -65,8 +65,9 @@ export class ProfileService {
      // tslint:disable-next-line:max-line-length
      const myPromise = new Promise((resolve, reject) => {
       // tslint:disable-next-line:max-line-length
-      this.http.get<ApiResponse>('https://api.github.com/users/' + this.userName + 'repos?access_token=' + environment.accesstoken ).toPromise().then(getUserRepo => {
-        this.otherRepo = this.getUserRepo;
+      this.http.get<ApiResponse>('https://api.github.com/users/MichelAtieno/repos?access_token=' + environment.accesstoken ).toPromise().then(getUserRepo => {
+        this.otherRepo = getUserRepo;
+        console.log(this.otherRepo);
         resolve();
       }, error => {
        console.log('Failed');

@@ -9,7 +9,7 @@ import { Repository } from '../repository';
   styleUrls: ['./repository.component.css']
 })
 export class RepositoryComponent implements OnInit {
-  repository: Repository;
+  /*repository: Repository;
   public newUserName: string;
   public profileSearch: string;
   public resultCount = 8;
@@ -33,14 +33,14 @@ export class RepositoryComponent implements OnInit {
   }
 
   constructor( public getRepositoryRequest: ProfileService) { }
-
-  ngOnInit() {
-    this.resultCount = 1;
+*/
+  ngOnInit() { }
+  /*  this.resultCount = 1;
     this.getRepositoryRequest.getProfileRepo(this.newUserName);
   }
   getInformation() {
     this.getRepositoryRequest.getProfileRepo(this.newUserName);
   }
 
-
+*/
 }
