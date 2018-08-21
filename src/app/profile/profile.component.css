@@ -1,8 +1,37 @@
-#Properties {
-   display: flex;
-   flex-direction: row; 
-};
+.container-fluid {
+    background-color: grey;
+    font-family: Trebuchet MS;
+    font-style: italic;
+    font-size: 23px;
+}
+
+.row{
+    display: flex;
+}
+
+#Gitphoto {
+    background-color: white;
+    box-sizing: border-box;
+    border: 20px solid grey;; 
+    box-shadow: 5px 5px 5px 5px snow;
+    height: 345px;
+    width: 300px;
+
+}
 
 #Properties1 {
-   margin-left: 10px; 
+    box-sizing: border-box;
+    border: 20px solid  grey;
+    box-shadow: 5px 5px 5px 5px snow;
+}
+
+img {
+    height: 300px; 
+    width: 300px;
+    margin-left: -20px;
+}
+
+h3 {
+    font-size: 40px;
+    font-weight: px;
 }
