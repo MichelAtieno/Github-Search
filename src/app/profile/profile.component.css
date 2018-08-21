@@ -30,8 +30,14 @@ img {
     margin-left: -20px;
 }
 
+#repo {
+    font-size: 50px;
+    margin-left:0px; 
+}
+
 h3 {
     font-weight: bolder;
     font-size: 25px;
     position: left;
 }
+

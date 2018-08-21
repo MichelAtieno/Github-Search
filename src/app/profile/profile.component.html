@@ -29,7 +29,17 @@
         
     </div>
         
-    <app-repository></app-repository>
+    <!-- <app-repository></app-repository>
+    ngFor let repository of getRepositoryRequest.repository -->
+
+    <div> 
+      <h3 ng-style="myStyle" id="repo">Repositories</h3>
+      <ul>
+        <li><a href= '{{repository_html_url}}' target:_blank></a>{{repository.name}}</li>
+        <li> Created on :{{repository.created_at}} </li>
+        <li>Description :{{repository.description}}</li>
+      </ul>
+    </div>
 
  
 </div>
