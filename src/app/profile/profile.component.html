@@ -6,14 +6,13 @@
     </div>
 
     <div class="row" id="Properties" ng-style="myStyle">
-        <div class="col-md-5">
+        <div class="col-md-5" id="Gitphoto">
          <img src='{{user.avatar_url}}' alt='Profile-Picture of Git-User'>
         </div>
 
         <div class="col-md-7" id="Properties1" ng-style="myStyle">
+          <h3 ng-style= "myStyle">Github Profile Details</h3>
          <ul>
-             <li>{{user.name}}</li>
-             <br>
              <li> Name:<a href='{{user.html_url}}' target='_blank'>{{user.login}}</a> </li>
              <br>
              <li>Repositories:{{user.public_repos}}</li>

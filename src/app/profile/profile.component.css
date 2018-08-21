@@ -16,7 +16,6 @@
     box-shadow: 5px 5px 5px 5px snow;
     height: 345px;
     width: 300px;
-
 }
 
 #Properties1 {
@@ -32,6 +31,7 @@ img {
 }
 
 h3 {
-    font-size: 40px;
-    font-weight: px;
+    font-weight: bolder;
+    font-size: 25px;
+    position: left;
 }
