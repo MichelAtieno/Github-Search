@@ -80,21 +80,3 @@ export class ProfileService {
       this.userName = userName;
     }
 }
-/* getRepository(searchProfile, toShow) {
-  interface ApiResponse {
-    items: any;
-}
-const promise = new Promise((resolve, reject) => {
-  // tslint:disable-next-line:max-line-length
-  this.http.get<ApiResponse>('https://api.github.com/users/repos?access_token=' + environment.accesstoken ).toPromise().then(getUserRepo => {
-    this.searchRepository = getUserRepo.items;
-    // console.log(getRepoResponse.items)
-    resolve();
-  }, error => {
-    this.searchRepository = 'Type to make a search request';
-    console.log('Loading Failed');
-    reject(error);
-  });
-});
-return promise;
-*/

@@ -4,25 +4,29 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { ProfileComponent } from './profile/profile.component';
-import { SearchComponent } from './search/search.component';
-import { RepositoryComponent } from './repository/repository.component';
 import { FormsModule } from '@angular/forms';
 import { LastNamePipe } from './last-name.pipe';
-import { DirectDirective } from './direct.directive'
+import { DirectDirective } from './direct.directive';
+import {RouterModule, Routes } from '@angular/router';
+
+const routes: Routes = [
+  {path: 'home', component: ProfileComponent},
+  {path: '', redirectTo: '/home', pathMatch: 'full'},
+];
 
 @NgModule({
   declarations: [
     AppComponent,
     ProfileComponent,
-    SearchComponent,
-    RepositoryComponent,
     LastNamePipe,
     DirectDirective
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(routes)
+
   ],
   providers: [],
   bootstrap: [AppComponent]
