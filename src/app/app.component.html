@@ -1,6 +1,17 @@
+<div class="container-fluid" ng-style="myStyle">
+
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
   <h1 ng-style="myStyle">
     Welcome to {{ title }}!
   </h1>
+  <nav class="navbar " ng-style="myStyle"> 
+      <p class="nav-item">
+        <a  class="nav-link" routerLink='/home' routerLinkActive='active'></a>Find Github User</p>
+  </nav>
+
+
   <app-profile></app-profile> 
+</div>
+  
+ 
