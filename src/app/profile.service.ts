@@ -74,7 +74,6 @@ export class ProfileService {
        reject(error);
      });
    });
-   reject(Error);
 }
     updateProfile(userName: string) {
       this.userName = userName;

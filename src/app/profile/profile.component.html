@@ -1,13 +1,12 @@
 <div class="container-fluid">
+
     <div class="row">
       <div class="col-md-5">
           <form (keyup)="findProfile()" #userForm="ngForm">
               <div class="form-group">
                 <input type="text" class="form-control" name="userName" placeholder="Search" [(ngModel)]="userName">
-                <!--<button type="submit" class="btn btn-primary"> Search User</button>-->
               </div>
-            </form>
-       
+          </form>
       </div>
     </div>
 
