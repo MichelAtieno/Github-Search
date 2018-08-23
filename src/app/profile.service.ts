@@ -74,6 +74,7 @@ export class ProfileService {
        reject(error);
      });
    });
+  return myPromise;
 }
     updateProfile(userName: string) {
       this.userName = userName;
